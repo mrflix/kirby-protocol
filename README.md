@@ -51,7 +51,7 @@ return array(
 
 ### 3.1 `actions` (required)
 
-Define how the actions you're tracking should get displayed:
+Define how the actions should get displayed:
 
 ```php
 return [
@@ -93,7 +93,7 @@ return [
 
 #### 3.1.2 `actions` Variables
 
-The following variables can be used as variables:
+The following variables can be used:
 
 | Option | Type   | Default        | Description          |
 |:-------|:-------|:---------------|:---------------------|
@@ -129,7 +129,7 @@ You can customize the `time` and `date` format. Based on the `date.handler` that
 I didn't feel the need to add pagination yet so the protocol cut's off at the arbitrary number of `400` entries. Feel free to change this value.
 
 
-## 4. Displaying the data
+## 4. Panel Section
 
 You can include the protocol section in pages on which you gather protocol data and on their parent pages.
 On parent pages the protocols of all children get combined.
@@ -142,12 +142,12 @@ sections:
 
 ## 5. Public Whishlist
 
-If you like one of the following features and have the time and skills to implement them?
+If you like one of the following features and have the time and skills to implement them:
 
 - [ ] database support
 - [ ] pagination
 
-Then contact me so that we won't work on it at the same time and eventually send a pull request.
+Contact me so that we won't work on it at the same time and eventually send a pull request.
 
 ## 6. License
 
