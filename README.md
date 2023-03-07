@@ -2,10 +2,19 @@
 
 Keep an overview of that's happening with the protocol section for Kirby CMS.
 
-![Screenshot of the protocol section in a ](https://user-images.githubusercontent.com/60777/223475679-3b606edd-773c-4fc0-90c9-063c108a33cc.png)
+![Screenshot of the protocol section in the panel of Kirby CMS. It displays a list of events grouped by date. Example: Tuesday, 7. March 2023. 14:41. Frank Welsh edited the form Job Profile for the client Fireworks LLC. Field: Job title.](https://user-images.githubusercontent.com/60777/223475679-3b606edd-773c-4fc0-90c9-063c108a33cc.png)
 
+## 1. Installation
 
-## 1. The Page Method
+This version of the plugin requires PHP 8.0 and Kirby 3.6.0 or higher. The recommended way of installing is by using Composer:
+
+```bash
+$ composer require mrflix/kirby-protocol
+```
+
+Alternatively, download and copy this repository to /site/plugins/protocol
+
+## 2. The Page Method
 
 Log actions using the `protocol` page method:
 
@@ -27,7 +36,7 @@ The data get's stored in the page `protocol()` is being called from. The Paramet
 `param1` and `param2` can be `File`, `User` and `Page` objects. They get turned into panel links.
 
 
-## 2. Options
+## 3. Options
 
 ```php
 return array(
@@ -40,7 +49,7 @@ return array(
 ```
 
 
-### 2.1 `actions` (required)
+### 3.1 `actions` (required)
 
 Define how the actions you're tracking should get displayed:
 
@@ -72,7 +81,7 @@ return [
 ]
 ```
 
-#### 2.1.1 `actions` Definition
+#### 3.1.1 `actions` Definition
 
 | Option  | Type   | Description                                                   |
 |:--------|:-------|:--------------------------------------------------------------|
@@ -82,7 +91,7 @@ return [
 
 `message` and `detail` can be callbacks.
 
-#### 2.1.2 `actions` Variables
+#### 3.1.2 `actions` Variables
 
 The following variables can be used as variables:
 
@@ -96,7 +105,7 @@ The following variables can be used as variables:
 `File`, `User` and `Page` variables get turned into panel links.
 
 
-### 2.2 `user`
+### 3.2 `user`
 
 I built this plugin to keep track of changes that invited frontend-editors make. Since the editors are not logged in as kirby users, their changes get stored using the kirby user. Using this option its possible to enrich the user info with data from a field:
 
@@ -110,17 +119,17 @@ I built this plugin to keep track of changes that invited frontend-editors make.
 },
 ```
 
-### 2.3 `time` and `date`
+### 3.3 `time` and `date`
 
 You can customize the `time` and `date` format. Based on the `date.handler` that you set (which per default is `date`).
 
 
-### 2.4 `limit`
+### 3.4 `limit`
 
 I didn't feel the need to add pagination yet so the protocol cut's off at the arbitrary number of `400` entries. Feel free to change this value.
 
 
-## 3. Displaying the data
+## 4. Displaying the data
 
 You can include the protocol section in pages on which you gather protocol data and on their parent pages.
 On parent pages the protocols of all children get combined.
@@ -131,7 +140,7 @@ sections:
 		type: protocol
 ```
 
-## 4. Public Whishlist
+## 5. Public Whishlist
 
 If you like one of the following features and have the time and skills to implement them?
 
@@ -140,6 +149,6 @@ If you like one of the following features and have the time and skills to implem
 
 Then contact me so that we won't work on it at the same time and eventually send a pull request.
 
-## 5. License
+## 6. License
 
 This plugin is free and published under the MIT license.
