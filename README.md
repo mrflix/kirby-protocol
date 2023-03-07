@@ -31,11 +31,11 @@ The data get's stored in the page `protocol()` is being called from. The Paramet
 
 ```php
 return array(
-  'mrflix.protocol.actions' => [], # required
-  'mrflix.protocol.user'    => null,
-  'mrflix.protocol.time'    => 'HH:mm',
-  'mrflix.protocol.date'    => 'l, j. F Y' # 'cccc, d. LLLL yyyy' when 'date.format' is 'intl'
-  'mrflix.protocol.limit'   => 400,
+	'mrflix.protocol.actions' => [], # required
+	'mrflix.protocol.user'    => null,
+	'mrflix.protocol.time'    => 'HH:mm',
+	'mrflix.protocol.date'    => 'l, j. F Y' # 'cccc, d. LLLL yyyy' when 'date.format' is 'intl'
+	'mrflix.protocol.limit'   => 400,
 );
 ```
 
@@ -46,29 +46,29 @@ Define how the actions you're tracking should get displayed:
 
 ```php
 return [
-  'mrflix.protocol.actions' => [
-    'created' => [
-      'icon' => 'add',
-      'message' => '{{ user }} created {{ page }}'
-    ],
-    'invitation' => [
-      'icon' => 'email',
-      'message' => '{{ user }} sent an invitation for {{ page }}',
-      'detail' => 'To {{ param1 }} with the password {{ param2 }}'
-    ],
-    'new-password' => [
-      'icon' => 'key',
-      'message' => '{{ user }} created a new password for {{ page }}',
-      'detail' => '{{ param1 }} → {{ param2 }}'
-    ],
-    'form.edited' => [
-      'icon' => 'edit',
-      'message' => '{{ user }} edited the form {{ param1 }} for the client {{ page }}',
-      'detail' => function($data){
-        return (count($data->param2()->value()) > 1 ? 'Fields' : 'Field') .': '. implode(', ', $data->param2()->value());
-      }
-    ],
-  ]
+	'mrflix.protocol.actions' => [
+		'created' => [
+			'icon' => 'add',
+			'message' => '{{ user }} created {{ page }}'
+		],
+		'invitation' => [
+			'icon' => 'email',
+			'message' => '{{ user }} sent an invitation for {{ page }}',
+			'detail' => 'To {{ param1 }} with the password {{ param2 }}'
+		],
+		'new-password' => [
+			'icon' => 'key',
+			'message' => '{{ user }} created a new password for {{ page }}',
+			'detail' => '{{ param1 }} → {{ param2 }}'
+		],
+		'form.edited' => [
+			'icon' => 'edit',
+			'message' => '{{ user }} edited the form {{ param1 }} for the client {{ page }}',
+			'detail' => function($data){
+				return (count($data->param2()->value()) > 1 ? 'Fields' : 'Field') .': '. implode(', ', $data->param2()->value());
+			}
+		],
+	]
 ]
 ```
 
@@ -102,11 +102,11 @@ I built this plugin to keep track of changes that invited frontend-editors make.
 
 ```php
 'mrflix.protocol.user' => function($page){
-  if(kirby()->user()->isKirby()){
-    return $page->editor_email();
-  } else {
-    return kirby()->user();
-  }
+	if(kirby()->user()->isKirby()){
+		return $page->editor_email();
+	} else {
+		return kirby()->user();
+	}
 },
 ```
 
@@ -127,8 +127,8 @@ On parent pages the protocols of all children get combined.
 
 ```yaml
 sections:
-  protocol:
-    type: protocol
+	protocol:
+		type: protocol
 ```
 
 ## 4. Public Whishlist
