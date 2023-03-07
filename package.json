@@ -1,7 +1,16 @@
 {
-  "scripts": {
-    "dev": "npx -y kirbyup src/index.js --watch",
-    "serve": "npx -y kirbyup serve src/index.js",
-    "build": "npx -y kirbyup src/index.js"
-  }
+	"name": "kirby-protocol",
+	"description": "Keep an overview of that's happening with the protocol section for Kirby CMS",
+	"main": "index.js",
+	"author": "Felix Niklas",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:mrflix/kirby-protocol.git"
+	},
+	"scripts": {
+		"dev": "npx -y kirbyup src/index.js --watch",
+		"serve": "npx -y kirbyup serve src/index.js",
+		"build": "npx -y kirbyup src/index.js"
+	}
 }
