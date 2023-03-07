@@ -5,25 +5,26 @@ Keep an overview of that's happening with the protocol section for Kirby CMS.
 ![Screenshot of the protocol section in a ](https://user-images.githubusercontent.com/60777/223475679-3b606edd-773c-4fc0-90c9-063c108a33cc.png)
 
 
-## 1. Gathering the data
+## 1. The Page Method
 
 Log actions using the `protocol` page method:
 
-`$page->protocol('created')`
+```php
+$page->protocol('created');
+$page->protocol('new-password', $old_password, $new_password);
+$page->protocol('invitation', $page->contact_email(), $page->password());
+$page->parent()->protocol('form.edited', $page, $diff);
+```
 
-`$page->parent()->protocol('form.edited', $page, $diff)`
+The data get's stored in the page `protocol()` is being called from. The Parameters for the method are:
 
-The data get's stored in the page `protocol()` is being called from.
+| Option | Type   | Description               |
+|:-------|:-------|:--------------------------|
+| action | String | What happend? Required.   |
+| param1 | Mixed  | First optional parameter  |
+| param2 | Mixed  | Second optional parameter |
 
-### 1.1 Method Parameters
-
-The methods first parameter is required. It's a variable key that you define. In the actions option you define how the entry gets displayed based on this key.
-
-| Option | Type   | Description             |
-|:-------|:-------|:------------------------|
-| action | String | What happend? Required. |
-| param1 | Mixed  | First parameter         |
-| param2 | Mixed  | Second parameter        |
+`param1` and `param2` can be `File`, `User` and `Page` objects. They get turned into panel links.
 
 
 ## 2. Options
@@ -50,6 +51,16 @@ return [
       'icon' => 'add',
       'message' => '{{ user }} created {{ page }}'
     ],
+    'invitation' => [
+      'icon' => 'email',
+      'message' => '{{ user }} sent an invitation for {{ page }}',
+      'detail' => 'To {{ param1 }} with the password {{ param2 }}'
+    ],
+    'new-password' => [
+      'icon' => 'key',
+      'message' => '{{ user }} created a new password for {{ page }}',
+      'detail' => '{{ param1 }} → {{ param2 }}'
+    ],
     'form.edited' => [
       'icon' => 'edit',
       'message' => '{{ user }} edited the form {{ param1 }} for the client {{ page }}',
@@ -61,7 +72,7 @@ return [
 ]
 ```
 
-#### 2.1.1 `actions` Options
+#### 2.1.1 `actions` Definition
 
 | Option  | Type   | Description                                                   |
 |:--------|:-------|:--------------------------------------------------------------|
