@@ -1,0 +1,15 @@
+{
+    "name": "mrflix/log",
+    "description": "Mi-di Atlas Logger",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felix Niklas",
+            "email": "mail@felixniklas.de"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
+}
