@@ -2,7 +2,7 @@
 
 Keep an overview of that's happening with the protocol section for Kirby CMS.
 
-![Screenshot of the protocol section in the panel of Kirby CMS. It displays a list of events grouped by date. Example: Tuesday, 7. March 2023. 14:41. Frank Welsh edited the form Job Profile for the client Fireworks LLC. Field: Job title.](https://user-images.githubusercontent.com/60777/223475679-3b606edd-773c-4fc0-90c9-063c108a33cc.png)
+![Screenshot of the protocol section in the panel of Kirby CMS. It displays a list of events grouped by date. Example: Tuesday, 7. March 2023. 14:41. Frank Welsh edited the form Job Profile for the client Fireworks LLC. Field: Job title.](https://user-images.githubusercontent.com/60777/223561097-d8ef69b3-1d7a-4b0f-a4e5-dc792d151e33.png)
 
 ## 1. Installation
 
@@ -22,7 +22,7 @@ Log actions using the `protocol` page method:
 $page->protocol('created');
 $page->protocol('new-password', $old_password, $new_password);
 $page->protocol('invitation', $page->contact_email(), $page->password());
-$page->parent()->protocol('form.edited', $page, $diff);
+$page->protocol('form.edited', $page, $diff);
 ```
 
 The data get's stored in the page `protocol()` is being called from. The Parameters for the method are:
