@@ -1,15 +1,22 @@
 {
-    "name": "mrflix/log",
-    "description": "Mi-di Atlas Logger",
-    "type": "kirby-plugin",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Felix Niklas",
-            "email": "mail@felixniklas.de"
-        }
-    ],
-    "require": {
-        "getkirby/composer-installer": "^1.1"
-    }
+	"name": "mrflix/kirby-protocol",
+	"description": "Keep an overview of that's happening with the protocol section for Kirby CMS",
+	"type": "kirby-plugin",
+	"version": "0.1",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Felix Niklas",
+			"email": "mail@felixniklas.de"
+		}
+	],
+	"require": {
+		"php": ">=8.0.0",
+		"getkirby/cms": ">=3.6.0",
+		"getkirby/composer-installer": "^1.2"
+	},
+	"extra": {
+		"installer-name": "protocol"
+	},
+	"minimum-stability": "RC"
 }
