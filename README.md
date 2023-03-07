@@ -2,8 +2,10 @@
 
 Keep an overview of that's happening with the protocol section for Kirby CMS.
 
+![Screenshot of the protocol section in a ](https://user-images.githubusercontent.com/60777/223475679-3b606edd-773c-4fc0-90c9-063c108a33cc.png)
 
-## 1. Protocol Method
+
+## 1. Gathering the data
 
 Log actions using the `protocol` page method:
 
@@ -28,10 +30,10 @@ The methods first parameter is required. It's a variable key that you define. In
 
 ```php
 return array(
-  'mrflix.protocol.actions' => [], #required
+  'mrflix.protocol.actions' => [], # required
   'mrflix.protocol.user'    => null,
   'mrflix.protocol.time'    => 'HH:mm',
-  'mrflix.protocol.date'    => 'l, j. F Y' // 'cccc, d. LLLL yyyy' when 'date.format' is 'intl'
+  'mrflix.protocol.date'    => 'l, j. F Y' # 'cccc, d. LLLL yyyy' when 'date.format' is 'intl'
   'mrflix.protocol.limit'   => 400,
 );
 ```
@@ -107,7 +109,7 @@ You can customize the `time` and `date` format. Based on the `date.handler` that
 I didn't feel the need to add pagination yet so the protocol cut's off at the arbitrary number of `400` entries. Feel free to change this value.
 
 
-## 3. Section
+## 3. Displaying the data
 
 You can include the protocol section in pages on which you gather protocol data and on their parent pages.
 On parent pages the protocols of all children get combined.
@@ -122,8 +124,8 @@ sections:
 
 If you like one of the following features and have the time and skills to implement them?
 
-[ ] database support
-[ ] pagination
+- [ ] database support
+- [ ] pagination
 
 Then contact me so that we won't work on it at the same time and eventually send a pull request.
 
