@@ -74,7 +74,13 @@ return [
       'icon' => 'edit',
       'message' => '{{ user }} edited the form {{ param1 }} for the client {{ page }}',
       'detail' => function($data){
-        return (count($data->param2()->value()) > 1 ? 'Fields' : 'Field') .': '. implode(', ', $data->param2()->value());
+        $editedFields = $data->param2()->value();
+
+        if(count($editedFields) > 1) {
+          return 'Fields: '. implode(', ', $editedFields);
+        } else {
+          return 'Field: '. $editedFields[0];
+        }
       }
     ],
   ]
